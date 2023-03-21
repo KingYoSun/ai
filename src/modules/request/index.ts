@@ -41,7 +41,15 @@ export default class extends Module {
 			};
 		}
 
-		await this.sendRequest(thing);
+		const flg = await this.sendRequest(thing);
+
+		if (!flg) {
+			msg.reply(serifs.req.sendFailed);
+			return {
+				reaction: "🆖",
+				immediate: true,
+			};
+		}
 
 		msg.reply(serifs.req.reply);
 
@@ -63,8 +71,7 @@ export default class extends Module {
 		mutation {
 			addProjectV2DraftIssue(input: {
 				projectId:${config.githubProjectId},
-				title:${thing},
-				body: "",
+				title:${thing}
 			}) {
 				projectItem {
 					id

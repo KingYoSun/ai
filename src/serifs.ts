@@ -507,6 +507,7 @@ export default {
 	req: {
 		reply: "ご意見サンクス",
 		invalid: "ごめん読めねえ",
+		sendFailed: "送信失敗！",
 	},
 };
 
