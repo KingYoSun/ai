@@ -70,8 +70,8 @@ export default class extends Module {
 		const query = `
 		mutation {
 			addProjectV2DraftIssue(input: {
-				projectId:${config.githubProjectId},
-				title:${thing}
+				projectId:"${config.githubProjectId}",
+				title:"${thing}"
 			}) {
 				projectItem {
 					id
