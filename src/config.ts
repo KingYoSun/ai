@@ -12,11 +12,13 @@ type Config = {
 	mecab?: string;
 	mecabDic?: string;
 	memoryDir?: string;
+	githubAccessToken: string;
+	githubProjectId: string;
 };
 
-const config = require('../config.json');
+const config = require("../config.json");
 
-config.wsUrl = config.host.replace('http', 'ws');
-config.apiUrl = config.host + '/api';
+config.wsUrl = config.host.replace("http", "ws");
+config.apiUrl = config.host + "/api";
 
 export default config as Config;
