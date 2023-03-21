@@ -20,11 +20,6 @@ export default class extends Module {
 		let text = msg.extractedText.toLowerCase();
 		if (!text.startsWith("req")) return false;
 
-		if (text.startsWith("req")) {
-			msg.reply(serifs.req.reply);
-			return true;
-		}
-
 		if (text.match(/^(.+?)\s(.+)/)) {
 			text = text.replace(/^(.+?)\s/, "");
 		} else {
@@ -47,6 +42,8 @@ export default class extends Module {
 		}
 
 		await this.sendRequest(thing);
+
+		msg.reply(serifs.req.reply);
 
 		return {
 			reaction: "🆗",
